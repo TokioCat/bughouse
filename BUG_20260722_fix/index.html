@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>BUG HOUSE</title>
+  <meta name="description" content="テキストテキストテキストテキストテキストテキスト" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Google fonts 読み込み -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gabriela&family=M+PLUS+Rounded+1c&family=Waterfall&display=swap"
+    rel="stylesheet" />
+  <!-- /Google fonts 読み込み -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- https://fontawesome.com/icons/brands/solid/instagram -->
+
+  <link rel="stylesheet" href="./css/destyle.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" href="favicon.ico" />
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+
+
+
+<body>
+  <!-- wrapper -->
+  <div class="wrapper">
+    <header id="header">
+      <h1 class="header_logo">
+        <a href="#"> <img src="./img/logo_F7F3F2.svg" alt="BUG HOUSE" /></a>
+      </h1>
+
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#style">STYLE</a></li>
+          <li><a href="#info">INFO</a></li>
+          <li><a href="#menu">MENU</a></li>
+          <li><a href="#access">ACCESS</a></li>
+
+          <li>
+            <a href="https://beauty.hotpepper.jp/" target="_blank">RESERVE</a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/" target="_blank"><span class="fa-brands fa-instagram"></span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="hamburger">
+        <span></span>
+      </div>
+
+      <nav class="header__nav-sp">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#style">STYLE</a></li>
+          <li><a href="#info">INFO</a></li>
+          <li><a href="#menu">MENU</a></li>
+          <li><a href="#access">ACCESS</a></li>
+
+          <li>
+            <a href="https://beauty.hotpepper.jp/" target="_blank">RESERVE</a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/" target="_blank"><span class="fa-brands fa-instagram"></span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- mv -->
+      <div class="mv">
+        <div class="mv__titleArea">
+          <h2 class="mv__title fadeUp">Lifestyle Fit</h2>
+          <div class="mv__subtitle fadeUp">
+            単なる可愛いや流行をただ追うだけではなく、あなたのライフスタイルにフィットするスタイルをご提供します。
+            <br />日常でも再現性の高いヘアーを体感してみてください
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /mv -->
+
+    <!-- content -->
+    <main class="content">
+      <!-- style -->
+      <div id="style">
+        <div class="container">
+          <div class="style__heading">
+            <h3 class="heading-primary">STYLE</h3>
+          </div>
+
+
+          <ul class="style__list">
+
+            <li class="style-list__inner">
+              <div class="style-list__type">women SHORT</div>
+              <a href="img/hair_sample_01.png"><img src="./img/hair_sample_01.png" alt="女性ショートヘア" /></a>
+              <p class="stylist">by TARO</p>
+              <!-- ★すべての li に閉じるボタンを追加します -->
+
+            </li>
+
+            <li class="style-list__inner">
+              <div class="style-list__type">women BOB</div>
+              <a href="img/hair_sample_02.png"><img src="./img/hair_sample_02.png" alt="女性ボブヘア" /></a>
+              <p class="stylist">by TARO</p>
+
+            </li>
+
+            <li class="style-list__inner">
+              <div class="style-list__type">women LONG</div>
+              <a href="img/hair_sample_03.png"><img src="./img/hair_sample_03.png" alt="女性ロングヘア" /></a>
+              <p class="stylist">by HANAKO</p>
+
+            </li>
+
+            <li class="style-list__inner">
+              <div class="style-list__type">men CUT</div>
+              <a href="img/hair_sample_04.png"><img src="./img/hair_sample_04.png" alt="男性カット" /></a>
+              <p class="stylist">by TARO</p>
+
+            </li>
+
+            <li class="style-list__inner">
+              <div class="style-list__type">men PERM</div>
+              <a href="img/hair_sample_05.png"><img src="./img/hair_sample_05.png" alt="男性パーマ" /></a>
+              <p class="stylist">by TARO</p>
+
+            </li>
+
+            <li class="style-list__inner">
+              <div class="style-list__type">kids CUT</div>
+              <a href="img/hair_sample_06.png"><img src="./img/hair_sample_06.png" alt="キッズカット" /></a>
+              <p class="stylist">by HANAKO</p>
+
+            </li>
+          </ul>
+
+          <!-- 画面全体を覆うモーダルの外枠 -->
+          <div id="imageModal" class="modal-overlay">
+            <div class="modal-content">
+              <!-- ここにクリックされた画像が複製されて入ります -->
+              <div id="modalImageContainer"></div>
+              <!-- 閉じるボタン -->
+              <button id="modalCloseBtn" class="modal-close-btn">close</button>
+            </div>
+          </div>
+
+
+          <script>
+            const links = document.querySelectorAll('.style-list__inner a');
+            const modal = document.getElementById('imageModal');
+            const modalContainer = document.getElementById('modalImageContainer');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+            // 1. 各写真（リンク）をクリックした時の処理
+            links.forEach(function (link) {
+              link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const originalImg = link.querySelector('img');
+                const clonedImg = originalImg.cloneNode(true);
+
+                modalContainer.innerHTML = '';
+                modalContainer.appendChild(clonedImg);
+
+                // ★【変更】 display: flex を一瞬先に適用するためにクラスを2段階でつけます
+                modal.classList.add('is-open');
+                // ほんのわずかな時間差（10ミリ秒）を作ってアニメーションを確実に発動させる
+                setTimeout(function () {
+                  modal.classList.add('is-active');
+                }, 10);
+              });
+            });
+
+            // 2. 閉じる共通の処理（関数にまとめました）
+            function closeModal() {
+              // ★【変更】 まずアニメーション用のクラスを外して、ふわっと消す
+              modal.classList.remove('is-active');
+
+              // CSSの「0.4秒（400ms）」のアニメーションが終わった後に、完全に非表示（display:none）にする
+              setTimeout(function () {
+                modal.classList.remove('is-open');
+              }, 400);
+            }
+
+            // 閉じるボタンをクリックした時
+            modalCloseBtn.addEventListener('click', closeModal);
+
+            // 暗い背景部分をクリックした時
+            modal.addEventListener('click', function (event) {
+              if (event.target === modal) {
+                closeModal();
+              }
+            });
+          </script>
+
+
+        </div>
+
+      </div>
+      <!-- </div> -->
+
+      <div id="info">
+        <div class="staff-container">
+          <div class="staff__heading">
+            <h3 class="heading-primary">SALON INFO</h3>
+            <h4 class="heading-secondary">Staff</h4>
+          </div>
+          <ul class="staff">
+            <li class="staff__inner">
+              <div class="staff_name">Taro</div>
+              <div class="staff_image">
+                <img src="./img/staff_owner.png" />
+              </div>
+              <div class="staff__position">オーナー　青山 太郎</div>
+              <div class="staff_career">
+                青山・六本木のサロンにて5年間勤務。店長も勤める。沖縄にて7年間勤務後、2021年10月独立。同年、12月21日に
+                Beauty Point BUG HOUSE をオープン
+              </div>
+            </li>
+            <li class="staff__inner">
+              <div class="staff_name">Hanako</div>
+              <div class="staff_image">
+                <img src="./img/staff_chief.png" />
+              </div>
+              <div class="staff__position">スタイリスト　茅ヶ崎 花子</div>
+              <div class="staff_career">
+                横浜、茅ヶ崎のサロンにて5年間勤務後、Beauty Point BUG HOUSE
+                のスタイリストに
+              </div>
+            </li>
+
+
+
+          </ul>
+        </div>
+
+        <!-- family -->
+        <div class="family">
+          <div class="family-container">
+            <div class="family__heading">
+              <h4 class="heading-secondary">Family Room</h4>
+              <h5 class="heading-tertiary">ファミルーム・個室完備</h5>
+            </div>
+            <div class="room__intro">
+              小さなお子様連れでも安心のファミリールームを完備。お子様と一緒の空間でリラックスして施術をできる個室となっております。
+              また、ファミリールーム以外も安心してご利用頂けるよう、店内全て、段差のない作りにしております
+            </div>
+            <div class="family__inner">
+              <img src="./img/room_children.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- menu -->
+      <div id="menu">
+        <div class="menu__heading">
+          <h3 class="heading-primary">MENU</h3>
+        </div>
+        <div class="menu-container">
+          <div class="menu__intro">
+            カットメニューはスパシャンプー・ブロー込みの価格です。（前髪カット・キッズカットを除く）<br />
+            カラー単品のみの場合、スパシャンプーブロー代が￥2,750
+            かかります。<br />
+            カラー・パーマ・トリートメントは長さによりロング代金が追加になります。
+          </div>
+
+          <table class="menu__list">
+            <tbody>
+              <th>CUT</th>
+              <tr>
+                <td>● Directorカット</td>
+                <td>シャンプー・ブロー込み</td>
+                <td>¥5,000</td>
+              </tr>
+              <tr>
+                <td>● Stylistカット</td>
+                <td>シャンプー・ブロー込み</td>
+                <td>¥4,200</td>
+              </tr>
+              <tr>
+                <td>● 子どもカット</td>
+                <td>小学生未満</td>
+                <td>¥1,200</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <th>PERM</th>
+              <tr>
+                <td>● ニュアンスパーマ</td>
+                <td>シャンプー・ブロー込み</td>
+                <td>¥4,200</td>
+              </tr>
+              <tr>
+                <td>● ニュアンスコスメパーマ</td>
+                <td>化粧品登録された薬剤</td>
+                <td>¥5,200</td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <th>COLOR</th>
+              <tr>
+                <td>● 根元カラー</td>
+                <td>根元2cm以内</td>
+                <td>¥3,000</td>
+              </tr>
+              <tr>
+                <td>● 全体カラー</td>
+                <td>根元と毛先に薬剤を使い分けて</td>
+                <td>¥3,000</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- /menu -->
+
+      <!-- access -->
+      <div id="access">
+        <div class="access__heading">
+          <h3 class="heading-primary">ACCESS</h3>
+        </div>
+
+        <div class="access__container">
+          <div class="access__inner">
+            <div class="access__intro">
+              <p>鎌倉駅からほど近いところにあるヘアサロンです。</p>
+              <p>お気軽にお立ち寄りください。</p>
+            </div>
+
+            <table class="access__info">
+              <tbody>
+                <tr>
+                  <th>住所</th>
+                  <td>神奈川県鎌倉市七里ヶ浜12-3<br />hama building 3F</td>
+                </tr>
+                <tr>
+                  <th>営業時間</th>
+                  <td>10:00~19:00(金曜日〜20:00<br />日曜日9:00~17:00)</td>
+                </tr>
+                <tr>
+                  <th>メール</th>
+                  <td>info@bug.com</td>
+                </tr>
+                <tr>
+                  <th>定休日</th>
+                  <td>火曜日</td>
+                </tr>
+                <tr>
+                  <th>予約</th>
+                  <td>
+                    <a href="https://beauty.hotpepper.jp/" target="_blank">https://beauty.hotpepper.jp/</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6511.616070070976!2d139.52489063148596!3d35.31075107046118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1781765124844!5m2!1sja!2sjp"
+              width="300" height="240" style="border: 0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="access__logo">
+          <a href="#">
+            <img src="./img/logo_666666.svg" />
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="copyright">&copy;2026 BUG All Rights Reserved.</p>
+    </footer>
+  </div>
+  <!-- /wrapper -->
+  <button class="page-top">
+    <a href="#"> <img src="./img/icon_pagetop.svg" alt="page top" /></a>
+  </button>
+
+  <script>
+    const button = document.querySelector(".page-top");
+
+    button.addEventListener("click", () => {
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        button.classList.add("is-active");
+      } else {
+        button.classList.remove("is-active");
+      }
+    });
+  </script>
+
+  <script src="./js/script.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+    $(function () {
+      $(".hamburger").on("click", function () {
+        $(".hamburger").toggleClass("open");
+        $(".header__nav-sp").fadeToggle();
+      });
+      // 【追加】メニュー内のリンクをクリックしたときの処理
+      $(".header__nav-sp a").on("click", function () {
+        $(".hamburger").removeClass("open"); // 三本線マークに戻す
+        $(".header__nav-sp").fadeOut(); // メニューを閉じる
+      });
+    });
+  </script>
+</body>
+
+</html>
